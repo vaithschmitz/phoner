@@ -1,0 +1,18 @@
+{
+  "name": "phoner",
+  "version": "1.0.0",
+  "description": "phone number formatter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "author": "vaithschmitz@googlemail.com",
+  "license": "ISC",
+  "dependencies": {
+    "libphonenumber-js": "^1.7.27",
+    "parcel": "^1.12.4"
+  }
+}
