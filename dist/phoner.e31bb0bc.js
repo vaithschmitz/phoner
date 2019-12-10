@@ -6973,14 +6973,14 @@ async function handleFile(file) {
 
   reader.onload = async function (file) {
     data = file.target.result;
-    let rawNumsArray = await data.split('\n');
+    let rawNumsArray = await data.split("\n");
     console.log(rawNumsArray);
     await rawNumsArray.forEach(el => finalNums.push((0, _libphonenumberJs.parsePhoneNumberFromString)(el)));
     console.log(finalNums);
   };
 }
 
-$('fileUpload').addEventListener('change', handleFile);
+$("fileUpload").addEventListener("change", handleFile);
 },{"libphonenumber-js":"node_modules/libphonenumber-js/index.es6.js"}],"../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
