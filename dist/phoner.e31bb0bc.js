@@ -7536,20 +7536,25 @@ const handleFile = async file => {
     data = file.target.result;
     let parsedRowRaw = await data.split("\n");
     let buffer = [];
-    parsedRowRaw = await parsedRowRaw.map(el => el.split(',')); // for(let i = 0; i < parsedRowRaw.length; i++){
-    //   if(parsedRowRaw[i][1].length > 0){
-    //     console.log(isoList[parsedRowRaw[i][1]])
-    //     parsedRowRaw[i][1] = isoList[parsedRowRaw[i][1]]
-    //   }
-    // } 
+    parsedRowRaw = await parsedRowRaw.map(el => el.split(',')); // replace countries with ISO codews
 
-    console.log(parsedRowRaw[12][1]);
-    console.log(isoList[parsedRowRaw[12][1]]); // parse into phone number where el[0] === rawNum, el[1] === iso
-    // await parsedRowRaw.forEach(el =>
-    //   // buffer.push(parsePhoneNumberFromString(el[0], el[1]))
-    //   buffer.push(parsePhoneNumberFromString(el[0], 'NO'))
-    // );
-    //   buffer.forEach(el => {
+    for (let i = 0; i < parsedRowRaw.length; i++) {
+      if (parsedRowRaw[i][1].length > 0) {
+        parsedRowRaw[i][1] = isoList[parsedRowRaw[i][1].replace(/^\s+|\s+$/g, '')];
+      }
+    } // parse into phone number where el[0] === rawNum, el[1] === iso
+
+
+    await parsedRowRaw.forEach(el => {
+      if (el[0] !== '' && el[1] !== '') {
+        buffer.push((0, _libphonenumberJs.parsePhoneNumberFromString)(el[0], el[1]));
+      } else if (el[0] !== '' & el[1] === '') {
+        buffer.push((0, _libphonenumberJs.parsePhoneNumberFromString)(el[0]));
+      } else {
+        buffer.push('NOPE');
+      }
+    });
+    console.log(buffer); //   buffer.forEach(el => {
     //     el !== undefined ? finalNums.push(el.number) : finalNums.push("");
     //   });
     //   console.log(finalNums);
@@ -7586,7 +7591,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52318" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62477" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

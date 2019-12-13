@@ -267,25 +267,32 @@ const handleFile = async file => {
   reader.onload = async function(file) {
     data = file.target.result;
     let parsedRowRaw = await data.split("\n");
-
     let buffer = [];
     parsedRowRaw = await parsedRowRaw.map(el => el.split(','))
 
-    // for(let i = 0; i < parsedRowRaw.length; i++){
-    //   if(parsedRowRaw[i][1].length > 0){
-    //     console.log(isoList[parsedRowRaw[i][1]])
-    //     parsedRowRaw[i][1] = isoList[parsedRowRaw[i][1]]
-    //   }
-    // } 
+    // replace countries with ISO codews
+    for(let i = 0; i < parsedRowRaw.length; i++){
+      if(parsedRowRaw[i][1].length > 0){
+        parsedRowRaw[i][1] = isoList[parsedRowRaw[i][1].replace(/^\s+|\s+$/g, '')]
+      }
+    } 
 
-    console.log(parsedRowRaw[12][1])
-    console.log(isoList[parsedRowRaw[12][1]]) 
     // parse into phone number where el[0] === rawNum, el[1] === iso
-    // await parsedRowRaw.forEach(el =>
-    //   // buffer.push(parsePhoneNumberFromString(el[0], el[1]))
-    //   buffer.push(parsePhoneNumberFromString(el[0], 'NO'))
-    // );
-
+    await parsedRowRaw.forEach(el => {
+      if(el[0] !== '' && el[1] !== ''){
+        buffer.push(parsePhoneNumberFromString(el[0], el[1]))
+      }
+      else if(el[0] !== '' & el[1] === ''){
+        buffer.push(parsePhoneNumberFromString(el[0]))
+      }
+      else{
+        buffer.push('NOPE')
+      }
+    }
+      
+    );
+    
+    console.log(buffer)
 
   //   buffer.forEach(el => {
   //     el !== undefined ? finalNums.push(el.number) : finalNums.push("");
