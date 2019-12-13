@@ -6957,31 +6957,608 @@ function getPhoneCode(country) {
 function getPhoneCodeCustom(country, metadata) {
   return (0, _getCountryCallingCode.default)(country, metadata);
 }
-},{"./metadata.min.json.js":"node_modules/libphonenumber-js/metadata.min.json.js","./es6/parsePhoneNumber":"node_modules/libphonenumber-js/es6/parsePhoneNumber.js","./es6/parsePhoneNumberFromString":"node_modules/libphonenumber-js/es6/parsePhoneNumberFromString.js","./es6/parse":"node_modules/libphonenumber-js/es6/parse.js","./es6/format":"node_modules/libphonenumber-js/es6/format.js","./es6/getNumberType":"node_modules/libphonenumber-js/es6/getNumberType.js","./es6/getExampleNumber":"node_modules/libphonenumber-js/es6/getExampleNumber.js","./es6/isPossibleNumber":"node_modules/libphonenumber-js/es6/isPossibleNumber.js","./es6/validate":"node_modules/libphonenumber-js/es6/validate.js","./es6/isValidNumberForRegion":"node_modules/libphonenumber-js/es6/isValidNumberForRegion.js","./es6/findPhoneNumbers":"node_modules/libphonenumber-js/es6/findPhoneNumbers.js","./es6/findPhoneNumbers_":"node_modules/libphonenumber-js/es6/findPhoneNumbers_.js","./es6/findNumbers":"node_modules/libphonenumber-js/es6/findNumbers.js","./es6/searchNumbers":"node_modules/libphonenumber-js/es6/searchNumbers.js","./es6/PhoneNumberMatcher":"node_modules/libphonenumber-js/es6/PhoneNumberMatcher.js","./es6/AsYouType":"node_modules/libphonenumber-js/es6/AsYouType.js","./es6/getCountryCallingCode":"node_modules/libphonenumber-js/es6/getCountryCallingCode.js","./es6/getCountries":"node_modules/libphonenumber-js/es6/getCountries.js","./es6/metadata":"node_modules/libphonenumber-js/es6/metadata.js","./es6/RFC3966":"node_modules/libphonenumber-js/es6/RFC3966.js","./es6/formatIncompletePhoneNumber":"node_modules/libphonenumber-js/es6/formatIncompletePhoneNumber.js","./es6/parseIncompletePhoneNumber":"node_modules/libphonenumber-js/es6/parseIncompletePhoneNumber.js","./es6/parseDigits":"node_modules/libphonenumber-js/es6/parseDigits.js","./es6/ParseError":"node_modules/libphonenumber-js/es6/ParseError.js"}],"index.js":[function(require,module,exports) {
+},{"./metadata.min.json.js":"node_modules/libphonenumber-js/metadata.min.json.js","./es6/parsePhoneNumber":"node_modules/libphonenumber-js/es6/parsePhoneNumber.js","./es6/parsePhoneNumberFromString":"node_modules/libphonenumber-js/es6/parsePhoneNumberFromString.js","./es6/parse":"node_modules/libphonenumber-js/es6/parse.js","./es6/format":"node_modules/libphonenumber-js/es6/format.js","./es6/getNumberType":"node_modules/libphonenumber-js/es6/getNumberType.js","./es6/getExampleNumber":"node_modules/libphonenumber-js/es6/getExampleNumber.js","./es6/isPossibleNumber":"node_modules/libphonenumber-js/es6/isPossibleNumber.js","./es6/validate":"node_modules/libphonenumber-js/es6/validate.js","./es6/isValidNumberForRegion":"node_modules/libphonenumber-js/es6/isValidNumberForRegion.js","./es6/findPhoneNumbers":"node_modules/libphonenumber-js/es6/findPhoneNumbers.js","./es6/findPhoneNumbers_":"node_modules/libphonenumber-js/es6/findPhoneNumbers_.js","./es6/findNumbers":"node_modules/libphonenumber-js/es6/findNumbers.js","./es6/searchNumbers":"node_modules/libphonenumber-js/es6/searchNumbers.js","./es6/PhoneNumberMatcher":"node_modules/libphonenumber-js/es6/PhoneNumberMatcher.js","./es6/AsYouType":"node_modules/libphonenumber-js/es6/AsYouType.js","./es6/getCountryCallingCode":"node_modules/libphonenumber-js/es6/getCountryCallingCode.js","./es6/getCountries":"node_modules/libphonenumber-js/es6/getCountries.js","./es6/metadata":"node_modules/libphonenumber-js/es6/metadata.js","./es6/RFC3966":"node_modules/libphonenumber-js/es6/RFC3966.js","./es6/formatIncompletePhoneNumber":"node_modules/libphonenumber-js/es6/formatIncompletePhoneNumber.js","./es6/parseIncompletePhoneNumber":"node_modules/libphonenumber-js/es6/parseIncompletePhoneNumber.js","./es6/parseDigits":"node_modules/libphonenumber-js/es6/parseDigits.js","./es6/ParseError":"node_modules/libphonenumber-js/es6/ParseError.js"}],"node_modules/country-list/data.json":[function(require,module,exports) {
+module.exports = [
+  { "code": "AD", "name": "Andorra" },
+  { "code": "AE", "name": "United Arab Emirates" },
+  { "code": "AF", "name": "Afghanistan" },
+  { "code": "AG", "name": "Antigua and Barbuda" },
+  { "code": "AI", "name": "Anguilla" },
+  { "code": "AL", "name": "Albania" },
+  { "code": "AM", "name": "Armenia" },
+  { "code": "AO", "name": "Angola" },
+  { "code": "AQ", "name": "Antarctica" },
+  { "code": "AR", "name": "Argentina" },
+  { "code": "AS", "name": "American Samoa" },
+  { "code": "AT", "name": "Austria" },
+  { "code": "AU", "name": "Australia" },
+  { "code": "AW", "name": "Aruba" },
+  { "code": "AX", "name": "Åland Islands" },
+  { "code": "AZ", "name": "Azerbaijan" },
+  { "code": "BA", "name": "Bosnia and Herzegovina" },
+  { "code": "BB", "name": "Barbados" },
+  { "code": "BD", "name": "Bangladesh" },
+  { "code": "BE", "name": "Belgium" },
+  { "code": "BF", "name": "Burkina Faso" },
+  { "code": "BG", "name": "Bulgaria" },
+  { "code": "BH", "name": "Bahrain" },
+  { "code": "BI", "name": "Burundi" },
+  { "code": "BJ", "name": "Benin" },
+  { "code": "BL", "name": "Saint Barthélemy" },
+  { "code": "BM", "name": "Bermuda" },
+  { "code": "BN", "name": "Brunei Darussalam" },
+  { "code": "BO", "name": "Bolivia, Plurinational State of" },
+  { "code": "BQ", "name": "Bonaire, Sint Eustatius and Saba" },
+  { "code": "BR", "name": "Brazil" },
+  { "code": "BS", "name": "Bahamas" },
+  { "code": "BT", "name": "Bhutan" },
+  { "code": "BV", "name": "Bouvet Island" },
+  { "code": "BW", "name": "Botswana" },
+  { "code": "BY", "name": "Belarus" },
+  { "code": "BZ", "name": "Belize" },
+  { "code": "CA", "name": "Canada" },
+  { "code": "CC", "name": "Cocos (Keeling) Islands" },
+  { "code": "CD", "name": "Congo, Democratic Republic of the" },
+  { "code": "CF", "name": "Central African Republic" },
+  { "code": "CG", "name": "Congo" },
+  { "code": "CH", "name": "Switzerland" },
+  { "code": "CI", "name": "Côte d'Ivoire" },
+  { "code": "CK", "name": "Cook Islands" },
+  { "code": "CL", "name": "Chile" },
+  { "code": "CM", "name": "Cameroon" },
+  { "code": "CN", "name": "China" },
+  { "code": "CO", "name": "Colombia" },
+  { "code": "CR", "name": "Costa Rica" },
+  { "code": "CU", "name": "Cuba" },
+  { "code": "CV", "name": "Cabo Verde" },
+  { "code": "CW", "name": "Curaçao" },
+  { "code": "CX", "name": "Christmas Island" },
+  { "code": "CY", "name": "Cyprus" },
+  { "code": "CZ", "name": "Czechia" },
+  { "code": "DE", "name": "Germany" },
+  { "code": "DJ", "name": "Djibouti" },
+  { "code": "DK", "name": "Denmark" },
+  { "code": "DM", "name": "Dominica" },
+  { "code": "DO", "name": "Dominican Republic" },
+  { "code": "DZ", "name": "Algeria" },
+  { "code": "EC", "name": "Ecuador" },
+  { "code": "EE", "name": "Estonia" },
+  { "code": "EG", "name": "Egypt" },
+  { "code": "EH", "name": "Western Sahara" },
+  { "code": "ER", "name": "Eritrea" },
+  { "code": "ES", "name": "Spain" },
+  { "code": "ET", "name": "Ethiopia" },
+  { "code": "FI", "name": "Finland" },
+  { "code": "FJ", "name": "Fiji" },
+  { "code": "FK", "name": "Falkland Islands (Malvinas)" },
+  { "code": "FM", "name": "Micronesia, Federated States of" },
+  { "code": "FO", "name": "Faroe Islands" },
+  { "code": "FR", "name": "France" },
+  { "code": "GA", "name": "Gabon" },
+  { "code": "GB", "name": "United Kingdom of Great Britain and Northern Ireland" },
+  { "code": "GD", "name": "Grenada" },
+  { "code": "GE", "name": "Georgia" },
+  { "code": "GF", "name": "French Guiana" },
+  { "code": "GG", "name": "Guernsey" },
+  { "code": "GH", "name": "Ghana" },
+  { "code": "GI", "name": "Gibraltar" },
+  { "code": "GL", "name": "Greenland" },
+  { "code": "GM", "name": "Gambia" },
+  { "code": "GN", "name": "Guinea" },
+  { "code": "GP", "name": "Guadeloupe" },
+  { "code": "GQ", "name": "Equatorial Guinea" },
+  { "code": "GR", "name": "Greece" },
+  { "code": "GS", "name": "South Georgia and the South Sandwich Islands" },
+  { "code": "GT", "name": "Guatemala" },
+  { "code": "GU", "name": "Guam" },
+  { "code": "GW", "name": "Guinea-Bissau" },
+  { "code": "GY", "name": "Guyana" },
+  { "code": "HK", "name": "Hong Kong" },
+  { "code": "HM", "name": "Heard Island and McDonald Islands" },
+  { "code": "HN", "name": "Honduras" },
+  { "code": "HR", "name": "Croatia" },
+  { "code": "HT", "name": "Haiti" },
+  { "code": "HU", "name": "Hungary" },
+  { "code": "ID", "name": "Indonesia" },
+  { "code": "IE", "name": "Ireland" },
+  { "code": "IL", "name": "Israel" },
+  { "code": "IM", "name": "Isle of Man" },
+  { "code": "IN", "name": "India" },
+  { "code": "IO", "name": "British Indian Ocean Territory" },
+  { "code": "IQ", "name": "Iraq" },
+  { "code": "IR", "name": "Iran, Islamic Republic of" },
+  { "code": "IS", "name": "Iceland" },
+  { "code": "IT", "name": "Italy" },
+  { "code": "JE", "name": "Jersey" },
+  { "code": "JM", "name": "Jamaica" },
+  { "code": "JO", "name": "Jordan" },
+  { "code": "JP", "name": "Japan" },
+  { "code": "KE", "name": "Kenya" },
+  { "code": "KG", "name": "Kyrgyzstan" },
+  { "code": "KH", "name": "Cambodia" },
+  { "code": "KI", "name": "Kiribati" },
+  { "code": "KM", "name": "Comoros" },
+  { "code": "KN", "name": "Saint Kitts and Nevis" },
+  { "code": "KP", "name": "Korea, Democratic People's Republic of" },
+  { "code": "KR", "name": "Korea, Republic of" },
+  { "code": "KW", "name": "Kuwait" },
+  { "code": "KY", "name": "Cayman Islands" },
+  { "code": "KZ", "name": "Kazakhstan" },
+  { "code": "LA", "name": "Lao People's Democratic Republic" },
+  { "code": "LB", "name": "Lebanon" },
+  { "code": "LC", "name": "Saint Lucia" },
+  { "code": "LI", "name": "Liechtenstein" },
+  { "code": "LK", "name": "Sri Lanka" },
+  { "code": "LR", "name": "Liberia" },
+  { "code": "LS", "name": "Lesotho" },
+  { "code": "LT", "name": "Lithuania" },
+  { "code": "LU", "name": "Luxembourg" },
+  { "code": "LV", "name": "Latvia" },
+  { "code": "LY", "name": "Libya" },
+  { "code": "MA", "name": "Morocco" },
+  { "code": "MC", "name": "Monaco" },
+  { "code": "MD", "name": "Moldova, Republic of" },
+  { "code": "ME", "name": "Montenegro" },
+  { "code": "MF", "name": "Saint Martin, (French part)" },
+  { "code": "MG", "name": "Madagascar" },
+  { "code": "MH", "name": "Marshall Islands" },
+  { "code": "MK", "name": "North Macedonia" },
+  { "code": "ML", "name": "Mali" },
+  { "code": "MM", "name": "Myanmar" },
+  { "code": "MN", "name": "Mongolia" },
+  { "code": "MO", "name": "Macao" },
+  { "code": "MP", "name": "Northern Mariana Islands" },
+  { "code": "MQ", "name": "Martinique" },
+  { "code": "MR", "name": "Mauritania" },
+  { "code": "MS", "name": "Montserrat" },
+  { "code": "MT", "name": "Malta" },
+  { "code": "MU", "name": "Mauritius" },
+  { "code": "MV", "name": "Maldives" },
+  { "code": "MW", "name": "Malawi" },
+  { "code": "MX", "name": "Mexico" },
+  { "code": "MY", "name": "Malaysia" },
+  { "code": "MZ", "name": "Mozambique" },
+  { "code": "NA", "name": "Namibia" },
+  { "code": "NC", "name": "New Caledonia" },
+  { "code": "NE", "name": "Niger" },
+  { "code": "NF", "name": "Norfolk Island" },
+  { "code": "NG", "name": "Nigeria" },
+  { "code": "NI", "name": "Nicaragua" },
+  { "code": "NL", "name": "Netherlands" },
+  { "code": "NO", "name": "Norway" },
+  { "code": "NP", "name": "Nepal" },
+  { "code": "NR", "name": "Nauru" },
+  { "code": "NU", "name": "Niue" },
+  { "code": "NZ", "name": "New Zealand" },
+  { "code": "OM", "name": "Oman" },
+  { "code": "PA", "name": "Panama" },
+  { "code": "PE", "name": "Peru" },
+  { "code": "PF", "name": "French Polynesia" },
+  { "code": "PG", "name": "Papua New Guinea" },
+  { "code": "PH", "name": "Philippines" },
+  { "code": "PK", "name": "Pakistan" },
+  { "code": "PL", "name": "Poland" },
+  { "code": "PM", "name": "Saint Pierre and Miquelon" },
+  { "code": "PN", "name": "Pitcairn" },
+  { "code": "PR", "name": "Puerto Rico" },
+  { "code": "PS", "name": "Palestine, State of" },
+  { "code": "PT", "name": "Portugal" },
+  { "code": "PW", "name": "Palau" },
+  { "code": "PY", "name": "Paraguay" },
+  { "code": "QA", "name": "Qatar" },
+  { "code": "RE", "name": "Réunion" },
+  { "code": "RO", "name": "Romania" },
+  { "code": "RS", "name": "Serbia" },
+  { "code": "RU", "name": "Russian Federation" },
+  { "code": "RW", "name": "Rwanda" },
+  { "code": "SA", "name": "Saudi Arabia" },
+  { "code": "SB", "name": "Solomon Islands" },
+  { "code": "SC", "name": "Seychelles" },
+  { "code": "SD", "name": "Sudan" },
+  { "code": "SE", "name": "Sweden" },
+  { "code": "SG", "name": "Singapore" },
+  { "code": "SH", "name": "Saint Helena, Ascension and Tristan da Cunha" },
+  { "code": "SI", "name": "Slovenia" },
+  { "code": "SJ", "name": "Svalbard and Jan Mayen" },
+  { "code": "SK", "name": "Slovakia" },
+  { "code": "SL", "name": "Sierra Leone" },
+  { "code": "SM", "name": "San Marino" },
+  { "code": "SN", "name": "Senegal" },
+  { "code": "SO", "name": "Somalia" },
+  { "code": "SR", "name": "Suriname" },
+  { "code": "SS", "name": "South Sudan" },
+  { "code": "ST", "name": "Sao Tome and Principe" },
+  { "code": "SV", "name": "El Salvador" },
+  { "code": "SX", "name": "Sint Maarten, (Dutch part)" },
+  { "code": "SY", "name": "Syrian Arab Republic" },
+  { "code": "SZ", "name": "Eswatini" },
+  { "code": "TC", "name": "Turks and Caicos Islands" },
+  { "code": "TD", "name": "Chad" },
+  { "code": "TF", "name": "French Southern Territories" },
+  { "code": "TG", "name": "Togo" },
+  { "code": "TH", "name": "Thailand" },
+  { "code": "TJ", "name": "Tajikistan" },
+  { "code": "TK", "name": "Tokelau" },
+  { "code": "TL", "name": "Timor-Leste" },
+  { "code": "TM", "name": "Turkmenistan" },
+  { "code": "TN", "name": "Tunisia" },
+  { "code": "TO", "name": "Tonga" },
+  { "code": "TR", "name": "Turkey" },
+  { "code": "TT", "name": "Trinidad and Tobago" },
+  { "code": "TV", "name": "Tuvalu" },
+  { "code": "TW", "name": "Taiwan, Province of China" },
+  { "code": "TZ", "name": "Tanzania, United Republic of" },
+  { "code": "UA", "name": "Ukraine" },
+  { "code": "UG", "name": "Uganda" },
+  { "code": "UM", "name": "United States Minor Outlying Islands" },
+  { "code": "US", "name": "United States of America" },
+  { "code": "UY", "name": "Uruguay" },
+  { "code": "UZ", "name": "Uzbekistan" },
+  { "code": "VA", "name": "Holy See" },
+  { "code": "VC", "name": "Saint Vincent and the Grenadines" },
+  { "code": "VE", "name": "Venezuela, Bolivarian Republic of" },
+  { "code": "VG", "name": "Virgin Islands, British" },
+  { "code": "VI", "name": "Virgin Islands, U.S." },
+  { "code": "VN", "name": "Viet Nam" },
+  { "code": "VU", "name": "Vanuatu" },
+  { "code": "WF", "name": "Wallis and Futuna" },
+  { "code": "WS", "name": "Samoa" },
+  { "code": "YE", "name": "Yemen" },
+  { "code": "YT", "name": "Mayotte" },
+  { "code": "ZA", "name": "South Africa" },
+  { "code": "ZM", "name": "Zambia" },
+  { "code": "ZW", "name": "Zimbabwe" }
+]
+;
+},{}],"node_modules/country-list/country-list.js":[function(require,module,exports) {
+'use strict'
+
+var data = require('./data.json')
+
+/** Precompute name and code lookups. */
+var nameMap = {}
+var codeMap = {}
+data.forEach(mapCodeAndName)
+
+function mapCodeAndName (country) {
+  nameMap[country.name.toLowerCase()] = country.code
+  codeMap[country.code.toLowerCase()] = country.name
+}
+
+exports.overwrite = function overwrite (countries) {
+  if (!countries || !countries.length) return
+  countries.forEach(function (country) {
+    var foundIndex = data.findIndex(function (item) {
+      return item.code === country.code
+    })
+    data[foundIndex] = country
+    mapCodeAndName(country)
+  })
+}
+
+exports.getCode = function getCode (name) {
+  return nameMap[name.toLowerCase()]
+}
+
+exports.getName = function getName (code) {
+  return codeMap[code.toLowerCase()]
+}
+
+exports.getNames = function getNames () {
+  return data.map(function (country) {
+    return country.name
+  })
+}
+
+exports.getCodes = function getCodes () {
+  return data.map(function (country) {
+    return country.code
+  })
+}
+
+exports.getCodeList = function getCodeList () {
+  return codeMap
+}
+
+exports.getNameList = function getNameList () {
+  return nameMap
+}
+
+exports.getData = function getData () {
+  return data
+}
+
+},{"./data.json":"node_modules/country-list/data.json"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _libphonenumberJs = require("libphonenumber-js");
 
+var _countryList = require("country-list");
+
 const $ = x => document.getElementById(x);
 
 let finalNums = [];
+const isoList = {
+  "Afghanistan": "AF",
+  "Aland Islands": "AX",
+  "Albania": "AL",
+  "Algeria": "DZ",
+  "American Samoa": "AS",
+  "Andorra": "AD",
+  "Angola": "AO",
+  "Anguilla": "AI",
+  "Antarctica": "AQ",
+  "Antigua And Barbuda": "AG",
+  "Argentina": "AR",
+  "Armenia": "AM",
+  "Aruba": "AW",
+  "Australia": "AU",
+  "Austria": "AT",
+  "Azerbaijan": "AZ",
+  "Bahamas": "BS",
+  "Bahrain": "BH",
+  "Bangladesh": "BD",
+  "Barbados": "BB",
+  "Belarus": "BY",
+  "Belgium": "BE",
+  "Belize": "BZ",
+  "Benin": "BJ",
+  "Bermuda": "BM",
+  "Bhutan": "BT",
+  "Bolivia": "BO",
+  "Bosnia And Herzegovina": "BA",
+  "Botswana": "BW",
+  "Bouvet Island": "BV",
+  "Brazil": "BR",
+  "British Indian Ocean Territory": "IO",
+  "Brunei Darussalam": "BN",
+  "Bulgaria": "BG",
+  "Burkina Faso": "BF",
+  "Burundi": "BI",
+  "Cambodia": "KH",
+  "Cameroon": "CM",
+  "Canada": "CA",
+  "Cape Verde": "CV",
+  "Cayman Islands": "KY",
+  "Central African Republic": "CF",
+  "Chad": "TD",
+  "Chile": "CL",
+  "China": "CN",
+  "Christmas Island": "CX",
+  "Cocos (Keeling) Islands": "CC",
+  "Colombia": "CO",
+  "Comoros": "KM",
+  "Congo": "CG",
+  "Congo, Democratic Republic": "CD",
+  "Cook Islands": "CK",
+  "Costa Rica": "CR",
+  "Cote D'Ivoire": "CI",
+  "Croatia": "HR",
+  "Cuba": "CU",
+  "Cyprus": "CY",
+  "Czech Republic": "CZ",
+  "Denmark": "DK",
+  "Djibouti": "DJ",
+  "Dominica": "DM",
+  "Dominican Republic": "DO",
+  "Ecuador": "EC",
+  "Egypt": "EG",
+  "El Salvador": "SV",
+  "Equatorial Guinea": "GQ",
+  "Eritrea": "ER",
+  "Estonia": "EE",
+  "Ethiopia": "ET",
+  "Falkland Islands (Malvinas)": "FK",
+  "Faroe Islands": "FO",
+  "Fiji": "FJ",
+  "Finland": "FI",
+  "France": "FR",
+  "French Guiana": "GF",
+  "French Polynesia": "PF",
+  "French Southern Territories": "TF",
+  "Gabon": "GA",
+  "Gambia": "GM",
+  "Georgia": "GE",
+  "Germany": "DE",
+  "Ghana": "GH",
+  "Gibraltar": "GI",
+  "Greece": "GR",
+  "Greenland": "GL",
+  "Grenada": "GD",
+  "Guadeloupe": "GP",
+  "Guam": "GU",
+  "Guatemala": "GT",
+  "Guernsey": "GG",
+  "Guinea": "GN",
+  "Guinea-Bissau": "GW",
+  "Guyana": "GY",
+  "Haiti": "HT",
+  "Heard Island & Mcdonald Islands": "HM",
+  "Holy See (Vatican City State)": "VA",
+  "Honduras": "HN",
+  "Hong Kong": "HK",
+  "Hungary": "HU",
+  "Iceland": "IS",
+  "India": "IN",
+  "Indonesia": "ID",
+  "Iran, Islamic Republic Of": "IR",
+  "Iraq": "IQ",
+  "Ireland": "IE",
+  "Isle Of Man": "IM",
+  "Israel": "IL",
+  "Italy": "IT",
+  "Jamaica": "JM",
+  "Japan": "JP",
+  "Jersey": "JE",
+  "Jordan": "JO",
+  "Kazakhstan": "KZ",
+  "Kenya": "KE",
+  "Kiribati": "KI",
+  "Korea": "KR",
+  "Kuwait": "KW",
+  "Kyrgyzstan": "KG",
+  "Lao People's Democratic Republic": "LA",
+  "Latvia": "LV",
+  "Lebanon": "LB",
+  "Lesotho": "LS",
+  "Liberia": "LR",
+  "Libyan Arab Jamahiriya": "LY",
+  "Liechtenstein": "LI",
+  "Lithuania": "LT",
+  "Luxembourg": "LU",
+  "Macao": "MO",
+  "Macedonia": "MK",
+  "Madagascar": "MG",
+  "Malawi": "MW",
+  "Malaysia": "MY",
+  "Maldives": "MV",
+  "Mali": "ML",
+  "Malta": "MT",
+  "Marshall Islands": "MH",
+  "Martinique": "MQ",
+  "Mauritania": "MR",
+  "Mauritius": "MU",
+  "Mayotte": "YT",
+  "Mexico": "MX",
+  "Micronesia, Federated States Of": "FM",
+  "Moldova": "MD",
+  "Monaco": "MC",
+  "Mongolia": "MN",
+  "Montenegro": "ME",
+  "Montserrat": "MS",
+  "Morocco": "MA",
+  "Mozambique": "MZ",
+  "Myanmar": "MM",
+  "Namibia": "NA",
+  "Nauru": "NR",
+  "Nepal": "NP",
+  "Netherlands": "NL",
+  "Netherlands Antilles": "AN",
+  "New Caledonia": "NC",
+  "New Zealand": "NZ",
+  "Nicaragua": "NI",
+  "Niger": "NE",
+  "Nigeria": "NG",
+  "Niue": "NU",
+  "Norfolk Island": "NF",
+  "Northern Mariana Islands": "MP",
+  "Norway": "NO",
+  "Oman": "OM",
+  "Pakistan": "PK",
+  "Palau": "PW",
+  "Palestinian Territory, Occupied": "PS",
+  "Panama": "PA",
+  "Papua New Guinea": "PG",
+  "Paraguay": "PY",
+  "Peru": "PE",
+  "Philippines": "PH",
+  "Pitcairn": "PN",
+  "Poland": "PL",
+  "Portugal": "PT",
+  "Puerto Rico": "PR",
+  "Qatar": "QA",
+  "Reunion": "RE",
+  "Romania": "RO",
+  "Russian Federation": "RU",
+  "Rwanda": "RW",
+  "Saint Barthelemy": "BL",
+  "Saint Helena": "SH",
+  "Saint Kitts And Nevis": "KN",
+  "Saint Lucia": "LC",
+  "Saint Martin": "MF",
+  "Saint Pierre And Miquelon": "PM",
+  "Saint Vincent And Grenadines": "VC",
+  "Samoa": "WS",
+  "San Marino": "SM",
+  "Sao Tome And Principe": "ST",
+  "Saudi Arabia": "SA",
+  "Senegal": "SN",
+  "Serbia": "RS",
+  "Seychelles": "SC",
+  "Sierra Leone": "SL",
+  "Singapore": "SG",
+  "Slovakia": "SK",
+  "Slovenia": "SI",
+  "Solomon Islands": "SB",
+  "Somalia": "SO",
+  "South Africa": "ZA",
+  "South Georgia And Sandwich Isl.": "GS",
+  "Spain": "ES",
+  "Sri Lanka": "LK",
+  "Sudan": "SD",
+  "Suriname": "SR",
+  "Svalbard And Jan Mayen": "SJ",
+  "Swaziland": "SZ",
+  "Sweden": "SE",
+  "Switzerland": "CH",
+  "Syrian Arab Republic": "SY",
+  "Taiwan": "TW",
+  "Tajikistan": "TJ",
+  "Tanzania": "TZ",
+  "Thailand": "TH",
+  "Timor-Leste": "TL",
+  "Togo": "TG",
+  "Tokelau": "TK",
+  "Tonga": "TO",
+  "Trinidad And Tobago": "TT",
+  "Tunisia": "TN",
+  "Turkey": "TR",
+  "Turkmenistan": "TM",
+  "Turks And Caicos Islands": "TC",
+  "Tuvalu": "TV",
+  "Uganda": "UG",
+  "Ukraine": "UA",
+  "United Arab Emirates": "AE",
+  "United Kingdom": "GB",
+  "United States": "US",
+  "United States Outlying Islands": "UM",
+  "Uruguay": "UY",
+  "Uzbekistan": "UZ",
+  "Vanuatu": "VU",
+  "Venezuela": "VE",
+  "Viet Nam": "VN",
+  "Virgin Islands, British": "VG",
+  "Virgin Islands, U.S.": "VI",
+  "Wallis And Futuna": "WF",
+  "Western Sahara": "EH",
+  "Yemen": "YE",
+  "Zambia": "ZM",
+  "Zimbabwe": "ZW"
+}; // parse csv to js
 
-async function handleFile(file) {
+const handleFile = async file => {
   let data;
-  const reader = new FileReader();
-  reader.readAsText(file.target.files[0]);
+  const reader = new FileReader(); // read from file input
+
+  reader.readAsText(file.target.files[0]); // post read, parse to array
 
   reader.onload = async function (file) {
     data = file.target.result;
-    let rawNumsArray = await data.split("\n");
-    console.log(rawNumsArray);
-    await rawNumsArray.forEach(el => finalNums.push((0, _libphonenumberJs.parsePhoneNumberFromString)(el)));
-    console.log(finalNums);
+    let parsedRowRaw = await data.split("\n");
+    let buffer = [];
+    parsedRowRaw = await parsedRowRaw.map(el => el.split(',')); // for(let i = 0; i < parsedRowRaw.length; i++){
+    //   if(parsedRowRaw[i][1].length > 0){
+    //     console.log(isoList[parsedRowRaw[i][1]])
+    //     parsedRowRaw[i][1] = isoList[parsedRowRaw[i][1]]
+    //   }
+    // } 
+
+    console.log(parsedRowRaw[12][1]);
+    console.log(isoList[parsedRowRaw[12][1]]); // parse into phone number where el[0] === rawNum, el[1] === iso
+    // await parsedRowRaw.forEach(el =>
+    //   // buffer.push(parsePhoneNumberFromString(el[0], el[1]))
+    //   buffer.push(parsePhoneNumberFromString(el[0], 'NO'))
+    // );
+    //   buffer.forEach(el => {
+    //     el !== undefined ? finalNums.push(el.number) : finalNums.push("");
+    //   });
+    //   console.log(finalNums);
   };
-}
+}; // output
+
 
 $("fileUpload").addEventListener("change", handleFile);
-},{"libphonenumber-js":"node_modules/libphonenumber-js/index.es6.js"}],"../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"libphonenumber-js":"node_modules/libphonenumber-js/index.es6.js","country-list":"node_modules/country-list/country-list.js"}],"../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
