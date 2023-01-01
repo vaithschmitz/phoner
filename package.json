@@ -14,6 +14,6 @@
   "dependencies": {
     "country-list": "^2.2.0",
     "libphonenumber-js": "^1.7.27",
-    "parcel": "^1.12.4"
+    "parcel": "^2.8.2"
   }
 }
